@@ -55,23 +55,27 @@ RAG-Project/
 ├── main.py                                 # Application entry point
 ├── RAG_Workflow_Presentation_v2.pptx       # RAG workflow presentation
 └── requirements.txt                        # Required Python packages
+```
 
-Project Components Overview
+# Project Components Overview
+---
+
 The main components of the RAG system are broken down as follows:
 
-main.py: The application entry point that initializes and runs the RAG system.
-src/rag_pipeline.py: The core orchestrator that connects retrieval and generation steps to form the complete RAG pipeline.
-src/document_loader.py & src/text_splitter.py: Responsible for loading raw documents and processing/chunking them into manageable pieces for embedding.
-src/embedding_model.py: Handles generating vector embeddings from text chunks.
-src/vector_store.py: Manages the storage and querying of the dense vector database (e.g., FAISS).
-src/retriever.py & src/hybrid_retriever.py: Execute similarity search to retrieve the most relevant chunks from the vector database based on the user query.
-src/generator.py: Interacts with the LLM to generate the final answer using the retrieved context.
-src/prompt_templates.py: Defines the templates used to structure the context and query for the LLM.
-config.py: Centralizes all configuration settings like paths, model parameters, and thresholds.
-data/ & vector_db/: Directories that hold the raw input documents (data) and the generated indexing files used for fast retrieval (vector_db).
+*   **`main.py`**: The application entry point that initializes and runs the RAG system.
+*   **`src/rag_pipeline.py`**: The core orchestrator that connects retrieval and generation steps to form the complete RAG pipeline.
+*   **`src/document_loader.py`** & **`src/text_splitter.py`**: Responsible for loading raw documents and processing/chunking them into manageable pieces for embedding.
+*   **`src/embedding_model.py`**: Handles generating vector embeddings from text chunks.
+*   **`src/vector_store.py`**: Manages the storage and querying of the dense vector database (e.g., FAISS).
+*   **`src/retriever.py`** & **`src/hybrid_retriever.py`**: Execute similarity search to retrieve the most relevant chunks from the vector database based on the user query.
+*   **`src/generator.py`**: Interacts with the LLM to generate the final answer using the retrieved context.
+*   **`src/prompt_templates.py`**: Defines the templates used to structure the context and query for the LLM.
+*   **`config.py`**: Centralizes all configuration settings like paths, model parameters, and thresholds.
+*   **`data/`** & **`vector_db/`**: Directories that hold the raw input documents (**`data`**) and the generated indexing files used for fast retrieval (**`vector_db`**).
 
-# Summary
+ # Summary
 
 เทคโนโลยี RAG (Retrieval-Augmented Generation) คือเครื่องมือสำคัญที่เข้ามาช่วยลดข้อจำกัดของโมเดล AI ในเรื่องการมั่วข้อมูล (Hallucination) 
 หลักการทำงานของมันคือ ระบบจะทำการค้นหาและดึงข้อมูลที่เกี่ยวข้องที่สุดจากฐานข้อมูลหรือคลังเอกสารของเรา (Retrieval) จากนั้นจึงส่งข้อมูลเหล่านั้นไปให้ AI ประมวลผลเพื่อสร้างเป็นคำตอบ (Generation) 
+
 จุดเด่นของการทำ RAG คือจะช่วยให้ AI สามารถตอบคำถามได้ถูกต้อง อัปเดตทันเหตุการณ์ และมีแหล่งอ้างอิงที่สามารถตรวจสอบได้จริง ทำให้เทคนิคนี้กลายเป็นมาตรฐานสำคัญในการพัฒนาแชตบอตเฉพาะทางและระบบถาม-ตอบอัจฉริยะ (Q&A System) ที่ต้องการความน่าเชื่อถือขั้นสูง
